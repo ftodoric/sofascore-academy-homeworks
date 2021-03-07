@@ -1,6 +1,6 @@
 body {
 	font-family: Lucida Sans Unicode;
-	color: #14263d;
+	color: #14263d; /*Dark Blue*/
 }
 
 h1 {
@@ -25,7 +25,6 @@ h1 {
 .form_container {
 	margin-top: 100px;
 	height: 200px;
-	#background-color: red;
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: center;
@@ -40,7 +39,7 @@ h1 {
 }
 
 .button {
-  background-color: #385585;
+  background-color: #385585; /*Blue*/
   width: 260px;
   padding: 10px 32px;
   color: white;
@@ -62,7 +61,7 @@ h1 {
 	left: -100px;
 	width: 50px;
 	height: 50px;
-	background-color: #6a89d9;
+	background-color: #6a89d9; /*Light Blue*/
 	animation-name: move-right;
 	animation-duration: 2s;
 	animation-delay: 0.4s;
@@ -75,7 +74,7 @@ h1 {
 	left: -100px;
 	width: 50px;
 	height: 50px;
-	background-color: #4962a3;
+	background-color: #4962a3; /*Blue*/
 	animation-name: move-right;
 	animation-duration: 2s;
 	animation-delay: 0.2s;
@@ -88,7 +87,7 @@ h1 {
 	left: -100px;
 	width: 50px;
 	height: 50px;
-	background-color: #2c3d6b;
+	background-color: #2c3d6b; /*Dark Blue*/
 	animation-name: move-right;
 	animation-duration: 2s;
 	animation-iteration-count: infinite;
