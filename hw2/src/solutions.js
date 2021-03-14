@@ -105,21 +105,37 @@ module.exports = {
    * Use array `.sort` method. Sort is done in place so there is no need to return anything.
    * @param {number[]} numberArray
    */
-  sortNumberArray(numberArray) {},
+  sortNumberArray(numberArray) {
+    numberArray.sort((a, b) => a - b);
+  },
 
   /**
    * Multiplies all the elements in the array by 2 _in place_
    * (edits the given array) and returns it.
    * @param {number[]} numberArray
    */
-  multiplyArrayByTwo(numberArray) {},
+  multiplyArrayByTwo(numberArray) {
+    for (var i = 0; i < numberArray.length; i++) {
+      numberArray[i] = numberArray[i] * 2;
+    }
+
+    return numberArray;
+  },
 
   /**
    * Multiplies all the elements in the array by 2 and returns them
    * in a new array.
    * @param numberArray
    */
-  multiplyArrayByTwoNew(numberArray) {},
+  multiplyArrayByTwoNew(numberArray) {
+    var newArray = [];
+
+    for (var i = 0; i < numberArray.length; i++) {
+      newArray[i] = numberArray[i] * 2;
+    }
+
+    return newArray;
+  },
 
   /**
    * Create two classes: `Person` and `Programmer`. `Programmer` class extends `Person`.
@@ -132,7 +148,32 @@ module.exports = {
    * @param {Function} callGetName
    * @param {Function} callGetLanguage
    */
-  classInheritance(callGetName, callGetLanguage) {},
+  classInheritance(callGetName, callGetLanguage) {
+    class Person {
+      constructor(name) {
+        this.name = name;
+        this.getName = this.getName.bind(this);
+      }
+
+      getName() {
+        callGetName(this.name);
+      }
+    }
+
+    class Programmer extends Person {
+      constructor(name, language) {
+        super(name);
+        this.language = language;
+        this.getLanguage = this.getLanguage.bind(this);
+      }
+
+      getLanguage() {
+        callGetLanguage(this.language);
+      }
+    }
+
+    return { Person, Programmer };
+  },
 
   /**
    * EXTRA CREDIT TASK -> Closure trick with async. Async is not important here and has nothing to do with the solution.
