@@ -35,13 +35,30 @@ module.exports = {
   /**
    * Returns an object with the `getValue` and `setValue` methods, having `value` hidden from the outside.
    */
-  createEncapsulatedObject() {},
+  createEncapsulatedObject() {
+    class Obj {
+      #value = null;
+
+      constructor() {}
+
+      getValue = function () {
+        return this.#value;
+      };
+      setValue = function (newValue) {
+        this.#value = newValue;
+      };
+    }
+
+    return new Obj();
+  },
 
   /**
    * Returns the shallow copy of the given `obj`. HINT: This **operator** will be used later.
    * @param {Object} obj
    */
-  shallowCopy(obj) {},
+  shallowCopy(obj) {
+    return Object.assign({}, obj);
+  },
 
   /**
    * Returns the deep copy of the given `obj`.
@@ -53,24 +70,35 @@ module.exports = {
    * Returns an array containing 2 elements which are
    * loosely equal, but strictly unequal.
    */
-  looselyTrue() {},
+  looselyTrue() {
+    return [0, "0"];
+  },
 
   /**
    * Returns a string that is loosely equal to boolean `true`. This one is tricky :)
    */
-  stringLooselyEqualToTrue() {},
+  stringLooselyEqualToTrue() {
+    return "1";
+  },
 
   /**
    * Returns correct sum of a and b.
    */
-  safeSum(a, b) {},
+  safeSum(a, b) {
+    return Number(a) + Number(b);
+  },
 
   /**
    * Returns formatted string for the given date.
    * Format should be `{day}-{month}-{fullYear}` (all numbers).
    * @param {Date} date
    */
-  formatDate(date) {},
+  formatDate(date) {
+    var day = date.getDate();
+    var month = date.getMonth() + 1;
+    var fullYear = date.getFullYear();
+    return `${day}-${month}-${fullYear}`;
+  },
 
   /**
    * Sorts the given `numberArray` in ascending order.
