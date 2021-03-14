@@ -64,7 +64,9 @@ module.exports = {
    * Returns the deep copy of the given `obj`.
    * @param {Object} obj
    */
-  deepCopy(obj) {},
+  deepCopy(obj) {
+    return JSON.parse(JSON.stringify(obj));
+  },
 
   /**
    * Returns an array containing 2 elements which are
@@ -188,9 +190,7 @@ module.exports = {
    */
   timeoutIncrement(consumer) {
     for (var i = 1; i <= 3; i += 1) {
-      setTimeout(() => {
-        /* your function goes here, or instead of this function */
-      }, 1000);
+      setTimeout(() => {}, 1000);
     }
   },
 };
