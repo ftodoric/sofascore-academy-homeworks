@@ -2,20 +2,35 @@ module.exports = {
   /**
    * Returns an empty object without prototype. There is object creation type that creates object without prototype
    */
-  createPrototypelessObject() {},
+  createPrototypelessObject() {
+    var prototypeless_obj = Object.create(null);
+    return prototypeless_obj;
+  },
 
   /**
    * Returns an object with prototype set to given `proto`.
    * @param {Object} proto Prototype object
    */
-  createObjectWithPrototype(proto) {},
+  createObjectWithPrototype(proto) {
+    var obj_with_prototype = {};
+    Object.setPrototypeOf(obj_with_prototype, proto);
+    return obj_with_prototype;
+  },
 
   /**
    * Returns an object with `value` property set to the given `value` and `getValue` method.
    * Be careful, if `value` changes, `getValue` should return changed `value`.
    * @param {any} value
    */
-  createObjectWithMethod(value) {},
+  createObjectWithMethod(value) {
+    var obj = {
+      value: value,
+      getValue: function () {
+        return this.value;
+      },
+    };
+    return obj;
+  },
 
   /**
    * Returns an object with the `getValue` and `setValue` methods, having `value` hidden from the outside.
@@ -106,7 +121,7 @@ module.exports = {
     for (var i = 1; i <= 3; i += 1) {
       setTimeout(() => {
         /* your function goes here, or instead of this function */
-      }, 1000)
+      }, 1000);
     }
   },
-}
+};
