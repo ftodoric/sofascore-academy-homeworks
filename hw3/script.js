@@ -5,8 +5,10 @@ async function getPokemons() {
     const response = await fetch(url);
 
     if (response.status === 200) {
-      const decodedData = await response.json();
-      display(decodedData.results);
+      const pokemonData = await response.json();
+      pokemonData.results.forEach((character) => {
+        getSpecs(character.url);
+      });
     } else {
       console.log("Response status code is not OK!");
     }
@@ -21,8 +23,8 @@ async function getSpecs(url) {
     const response = await fetch(url);
 
     if (response.status === 200) {
-      const decodedData = await response.json();
-      displayPokemon(decodedData);
+      const pokeSpecs = await response.json();
+      displayPokemonSpecs(pokeSpecs);
     } else {
       console.log("Response status code is not OK!");
     }
@@ -32,8 +34,8 @@ async function getSpecs(url) {
   }
 }
 
-function displayPokemon(character) {
-  const pokeDiv = document.getElementById("poke-list");
+function displayPokemonSpecs(character) {
+  const pokeList = document.getElementById("poke-list");
 
   // pokemon list item
   const pokeItem = document.createElement("li");
@@ -50,6 +52,28 @@ function displayPokemon(character) {
   pokeImg.src = character.sprites.front_default;
   pokeImg.width = 80;
 
+  // pokemon stats
+  const pokeStats = document.createElement("div");
+  const pokeStatNames = document.createElement("div");
+  pokeStatNames.className = "poke-stat-name";
+  const pokeStatValues = document.createElement("div");
+  pokeStats.appendChild(pokeStatNames);
+  pokeStats.appendChild(pokeStatValues);
+  pokeStats.className = "poke-stats";
+
+  // iterate
+  character.stats.forEach((component) => {
+    // stat name
+    const statName = document.createElement("p");
+    statName.innerText = component.stat.name + ": ";
+    pokeStatNames.appendChild(statName);
+
+    // stat value
+    const statValue = document.createElement("p");
+    statValue.innerText = component.base_stat;
+    pokeStatValues.appendChild(statValue);
+  });
+
   // remove button
   const pokeButton = document.createElement("button");
   pokeButton.className = "remove-button";
@@ -58,19 +82,18 @@ function displayPokemon(character) {
     pokeItem.remove();
   };
 
-  // append to the main div
-  pokeDiv.appendChild(pokeItem);
+  // create pokeHeader
+  const pokeHeader = document.createElement("div");
+  pokeHeader.appendChild(pokeLabel);
+  pokeHeader.appendChild(pokeImg);
 
   // append to pokeItem
-  pokeItem.appendChild(pokeLabel);
-  pokeItem.appendChild(pokeImg);
+  pokeItem.appendChild(pokeHeader);
+  pokeItem.appendChild(pokeStats);
   pokeItem.appendChild(pokeButton);
-}
 
-function display(characters) {
-  characters.forEach((character) => {
-    getSpecs(character.url);
-  });
+  // append to the list
+  pokeList.appendChild(pokeItem);
 }
 
 getPokemons();

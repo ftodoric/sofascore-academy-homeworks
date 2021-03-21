@@ -8,8 +8,8 @@ body {
   justify-content: flex-start;
 
   font-size: 30pt;
-  color: rgb(230, 253, 23);
-  background-color: rgb(184, 47, 47);
+  color: rgb(230, 253, 23); /* yellow */
+  background-color: rgb(184, 47, 47); /* red */
 
   padding-left: 10px;
 }
@@ -22,19 +22,50 @@ body {
   color: royalblue;
 }
 
+.poke-list-header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 900px;
+
+  margin-left: 20px;
+  margin-bottom: -10px;
+  border: solid black 3px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 .poke-item {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  width: 50%;
+  width: 900px;
 
   margin: 20px;
   border: solid black 2px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 20px;
+}
+
+.poke-stats {
+  display: flex;
+  flex-flow: row wrap;
+
+  color: black;
+}
+
+.poke-stat-name {
+  text-align: end;
+  margin-right: 10px;
 }
 
 .remove-button {
-  height: 30pt;
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 14px;
 }
