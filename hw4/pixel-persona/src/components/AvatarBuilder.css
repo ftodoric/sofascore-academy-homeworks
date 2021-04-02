@@ -1,0 +1,19 @@
+.Avatar-builder {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+
+  font-size: 23px;
+}
+
+input[type="text"] {
+  font-size: 23px;
+  font-family: Ubuntu;
+  width: 200px;
+}
+
+input[type="number"] {
+  font-size: 23px;
+  font-family: Ubuntu;
+  width: 200px;
+}

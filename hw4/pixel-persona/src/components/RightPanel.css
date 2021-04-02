@@ -1,0 +1,8 @@
+.Right-panel {
+  /* background-color: yellow; */
+  display: flex;
+  flex-flow: column nowrap;
+
+  padding: 40px;
+  margin-right: 50px;
+}
