@@ -6,9 +6,9 @@ Weekly assignments from SofaScore Academy lectures.
 
 ## Time Table
 
-|       Date | Lecture                   | Assignment           |
-| ---------: | :------------------------ | :------------------- |
-| 02/03/2021 | HTML & CSS                | Simple Login Form    |
-| 09/03/2021 | ~~JavaScript~~ ECMAScript | JS Tasks             |
-| 16/03/2021 | Advanced JavaScript       | Web App with PokéAPI |
-| 23/03/2021 | React.js                  | React App with Custom API|
+|       Date | Lecture                   | Assignment                |
+| ---------: | :------------------------ | :------------------------ |
+| 02/03/2021 | HTML & CSS                | Simple Login Form         |
+| 09/03/2021 | ~~JavaScript~~ ECMAScript | JS Tasks                  |
+| 16/03/2021 | Advanced JavaScript       | Web App with PokéAPI      |
+| 23/03/2021 | React.js                  | React App with Custom API |
