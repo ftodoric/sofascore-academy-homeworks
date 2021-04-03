@@ -14,6 +14,9 @@ function RightPanel() {
         action={() => {
           document.getElementById("Avatar-form").reset();
           document.getElementById("Avatar-image-holder").src = emptyAvatar;
+          var generatorRadioElement = document.getElementsByName("avmode");
+          for (var i = 0; i < generatorRadioElement.length; i++)
+            generatorRadioElement[i].checked = false;
         }}
       />
     </div>
@@ -51,6 +54,20 @@ function createItemListWithCurrentData() {
     "</div>";
 
   itemDiv.appendChild(nameDiv);
+
+  // create remove button
+  const removeButton = document.createElement("button");
+  removeButton.className = "Avatar-button";
+  removeButton.innerText = "Remove";
+  removeButton.onclick = function () {
+    item.remove();
+  };
+
+  itemDiv.appendChild(removeButton);
+
+  // create separator
+  const separator = document.createElement("hr");
+  item.appendChild(separator);
 
   // append item to the list
   avatarList.appendChild(item);

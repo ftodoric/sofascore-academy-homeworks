@@ -1,8 +1,10 @@
 .Avatar-button {
   color: white;
   font-size: 23px;
+  font-family: "Ubuntu";
   background-color: #e37439;
   padding: 10px;
   margin: 10px;
   border: 0;
+  height: 50px;
 }
