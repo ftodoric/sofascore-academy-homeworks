@@ -6,3 +6,18 @@
   padding: 40px;
   margin-right: 50px;
 }
+
+ul {
+  list-style-type: none;
+}
+
+.Avatar-item {
+  display: flex;
+  flex-flow: row nowrap;
+
+  margin-top: 10px;
+}
+
+.Item-icon {
+  width: 100px;
+}
