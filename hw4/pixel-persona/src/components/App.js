@@ -1,15 +1,17 @@
-import "./App.css";
-import CreateAvatar from "./CreateAvatar";
-import AvatarGroup from "./AvatarGroup";
+import './App.css'
+import CreateAvatar from './CreateAvatar'
+import AvatarGroup from './AvatarGroup'
+import Avatar from './Avatar'
 
 function App() {
   return (
     <div className="App">
+      <Avatar />
+      {/* 
       <CreateAvatar />
-      <AvatarGroup />
-      <script src="./components/avatar-api-script.js"></script>
+      <AvatarGroup /> */}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
