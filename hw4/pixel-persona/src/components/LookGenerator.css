@@ -1,0 +1,6 @@
+.Look-generator {
+  display: flex;
+  flex-flow: row nowrap;
+
+  margin-top: 50px;
+}

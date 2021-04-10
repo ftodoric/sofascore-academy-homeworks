@@ -1,0 +1,15 @@
+.App {
+  min-height: 100vh;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  color: white;
+}
+
+.App-footer {
+  background-color: #202226;
+  color: white;
+}

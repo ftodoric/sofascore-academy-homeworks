@@ -1,0 +1,10 @@
+.Left-panel {
+  /* background-color: yellow; */
+  display: flex;
+  flex-flow: column nowrap;
+
+  padding: 40px;
+  margin-left: 20px;
+
+  width: 600px;
+}
