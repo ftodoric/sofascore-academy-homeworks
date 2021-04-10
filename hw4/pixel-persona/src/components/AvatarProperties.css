@@ -1,0 +1,13 @@
+.Avatar-form {
+  display: flex;
+  flex-flow: column nowrap;
+
+  width: 400px;
+  padding: 20px;
+}
+
+.Avatar-form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
