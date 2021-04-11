@@ -1,0 +1,45 @@
+.input-form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  width: 700px;
+  padding: 20px;
+}
+
+/* For username and password */
+.input-space {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 400px;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+.button {
+  margin: 10px;
+  padding: 10px;
+  border: 0;
+  width: 300px;
+
+  color: white;
+  background-color: #e37439;
+
+  font-size: 23px;
+  font-family: "Ubuntu";
+}
+
+.hide-pass-button {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+
+  width: 120px;
+  height: 30px;
+  margin-right: -100px;
+  margin-top: 0px;
+
+  font-size: 15px;
+  background-color: #525252;
+  border-radius: 5px;
+}
