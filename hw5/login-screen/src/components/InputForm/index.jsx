@@ -1,24 +1,68 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./styles.css";
 
 function InputForm() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("testUser");
+  const [password, setPassword] = useState("testUser-password");
   const [isPassHidden, setPassHidden] = useState(false);
+  const [isLoginSuccess, setLoginSuccess] = useState(null);
 
-  useEffect(() => {
-    document.getElementById("password").value = username;
-  }, [username]);
+  const passwordHidden = useRef(null);
+  const loginStatus = useRef(null);
 
+  // Show/Hide password
   useEffect(() => {
-    document.getElementById("password").type = isPassHidden
-      ? "password"
-      : "text";
+    passwordHidden.current.type = isPassHidden ? "password" : "text";
   }, [isPassHidden]);
+
+  // Print Login Success
+  useEffect(() => {
+    switch (isLoginSuccess) {
+      case null:
+        loginStatus.current.innerText = "";
+        break;
+      case true:
+        loginStatus.current.innerText = "Login successfull";
+        break;
+      case false:
+        loginStatus.current.innerText = "Incorrect username and/or password";
+        break;
+      default:
+        loginStatus.current.innerText = "";
+    }
+  }, [isLoginSuccess]);
+
+  // Submit event
+  function submitForm(e) {
+    e.preventDefault();
+
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({
+      username: username,
+      password: password,
+    });
+
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+    };
+
+    fetch("https://private-leagues-api.herokuapp.com/api/login", requestOptions)
+      .then((response) => {
+        if (response.status === 200) setLoginSuccess(true);
+        else if (response.status === 404) {
+          setLoginSuccess(false);
+        }
+      })
+      .catch((error) => console.log("error", error));
+  }
 
   return (
     <div>
-      <form className="input-form">
+      <form className="input-form" id="form-userDataauserData">
         <div className="input-space">
           <label htmlFor="username">Username</label>
           <input
@@ -30,6 +74,7 @@ function InputForm() {
             }}
           />
         </div>
+
         <div className="input-space">
           <label htmlFor="password">Password</label>
           <input
@@ -39,6 +84,7 @@ function InputForm() {
             onChange={() => {
               setPassword(document.getElementById("password").value);
             }}
+            ref={passwordHidden}
           />
         </div>
         <div>
@@ -53,11 +99,13 @@ function InputForm() {
         <div>
           <input
             className="button"
-            type="button"
+            type="submit"
             id="submit-button"
-            value="Submit"
+            value="Login"
+            onClick={submitForm}
           />
         </div>
+        <div style={{ marginTop: "20px" }} ref={loginStatus}></div>
       </form>
     </div>
   );
