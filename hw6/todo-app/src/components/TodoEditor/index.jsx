@@ -1,13 +1,12 @@
-import { useEffect, useState, useRef } from "react";
+import { useState } from "react";
 import AddTodoButton from "./AddTodoButton";
+import NewTodoForm from "./NewTodoForm";
 import "./styles.css";
+import * as Util from "./util.js";
 
 function TodoEditor() {
   // States
   const [addingNewTodo, setAddingNewTodo] = useState(false);
-
-  const [inputText, setInputText] = useState("");
-  const [isInputEmpty, setIsInputEmpty] = useState(true);
 
   const [todoList, setTodoList] = useState([]);
   const [filtersVisible, setFiltersVisible] = useState(false);
@@ -23,56 +22,37 @@ function TodoEditor() {
     uncompleted: (todo) => !todo.completed,
   };
 
-  // Refs
-  const inputRef = useRef(null);
-
-  // When input is empty don't allow 'Add new todo' action
-  useEffect(() => {
-    if (inputText.length > 0) setIsInputEmpty(false);
-    else setIsInputEmpty(true);
-  }, [inputText]);
-
   // Add new todo from the input form
-  function addTodo() {
-    let copy = [...todoList];
-    copy = [
-      ...copy,
-      { id: todoList.length, name: inputText, completed: false },
-    ];
-    setTodoList(copy);
+  function handleNewTodo(inputText) {
+    // Change state
+    setAddingNewTodo(false);
 
-    // Reset input text
-    setInputText("");
+    // Add new todo to the list
+    let updated = Util.addTodoToList(
+      { id: todoList.length, name: inputText, completed: false },
+      todoList
+    );
+    setTodoList(updated);
   }
 
   // Complete todo
   function completeTodo(event) {
     event.preventDefault();
-    let copy = [...todoList];
     const todoID = event.target.id;
-    copy[todoID].completed = !copy[todoID].completed;
-    setTodoList(copy);
+    let updated = Util.completeTodo(todoID, todoList);
+    setTodoList(updated);
   }
 
   // Remove todo item
-  function removeTodo(e) {
-    e.preventDefault();
-    const todoID = e.target.id;
-    let copy = [];
-    let k = 0;
-    for (let i = 0; i < todoList.length; i++) {
-      if (i === Number(todoID)) continue;
-      copy.push({
-        id: k,
-        name: todoList[i].name,
-        completed: todoList[i].completed,
-      });
-      k++;
-    }
-    setTodoList(copy);
+  function removeTodo(event) {
+    event.preventDefault();
+    const todoID = event.target.id;
+    let updated = Util.removeTodo(todoID, todoList);
+    setTodoList(updated);
   }
 
-  function showFilters(e) {
+  // Show filters
+  function showFilters(event) {
     setFiltersVisible(!filtersVisible);
   }
 
@@ -83,39 +63,11 @@ function TodoEditor() {
         setAddingNewTodo={setAddingNewTodo}
       />
 
-      <div
-        className="NewTodoForm"
-        style={{ display: addingNewTodo ? "flex" : "none" }}
-      >
-        <input
-          className="NewTodoInput"
-          placeholder="Enter Task"
-          value={inputText}
-          onChange={() => {
-            setInputText(inputRef.current.value);
-          }}
-          ref={inputRef}
-        />
-        <button
-          className="NewTodoButton"
-          style={{ color: isInputEmpty ? "grey" : "#eb4034" }}
-          onClick={() => {
-            setAddingNewTodo(false);
-            addTodo();
-          }}
-        >
-          ✓
-        </button>
-        <button
-          className="NewTodoButton"
-          onClick={() => {
-            setInputText("");
-            setAddingNewTodo(false);
-          }}
-        >
-          X
-        </button>
-      </div>
+      <NewTodoForm
+        addingNewTodo={addingNewTodo}
+        setAddingNewTodo={setAddingNewTodo}
+        handleNewTodo={handleNewTodo}
+      />
 
       <div className="TodoList">
         <div className="TodoListTitle">TODO LIST</div>
@@ -125,7 +77,7 @@ function TodoEditor() {
             width="20"
             height="20"
             fill="currentColor"
-            class="bi bi-filter"
+            className="bi bi-filter"
             viewBox="0 -2 16 15"
           >
             <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />

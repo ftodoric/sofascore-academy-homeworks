@@ -5,42 +5,6 @@
   align-items: center;
 }
 
-.AddTodoButton {
-  border: none;
-  margin-top: 20px;
-
-  background-color: white;
-  color: #eb4034;
-  font-size: 19px;
-  font-weight: bold;
-}
-
-.NewTodoForm {
-  display: flex;
-  flex-flow: row nowrap;
-  margin-top: 20px;
-}
-
-.NewTodoInput {
-  border: none;
-  border-bottom: 2px solid #eb4034;
-
-  width: 350px;
-
-  font-size: 16px;
-}
-
-.NewTodoButton {
-  border: none;
-  margin-left: 10px;
-
-  background-color: white;
-  font-weight: bold;
-
-  font-size: 16px;
-  color: #eb4034;
-}
-
 .TodoList {
   display: flex;
   flex-flow: column nowrap;
