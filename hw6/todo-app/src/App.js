@@ -1,12 +1,12 @@
 import "./App.css";
 import Header from "./components/Header";
-import TaskEditor from "./components/TaskEditor";
+import TodoEditor from "./components/TodoEditor";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <TaskEditor />
+      <Header title="TODO APP" />
+      <TodoEditor />
     </div>
   );
 }
