@@ -1,0 +1,91 @@
+.AddTodo {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.AddTodoButton {
+  border: none;
+  margin-top: 20px;
+
+  background-color: white;
+  color: #eb4034;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.NewTaskForm {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-top: 20px;
+}
+
+.NewTaskInput {
+  border: none;
+  border-bottom: 2px solid #eb4034;
+
+  width: 350px;
+
+  font-size: 16px;
+}
+
+.NewTaskButton {
+  border: none;
+  margin-left: 10px;
+
+  background-color: white;
+  font-weight: bold;
+
+  font-size: 16px;
+}
+
+.TodoListTitle {
+  margin-top: 30px;
+
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.ShowFilterButton {
+  border: none;
+  background-color: white;
+  margin-top: 10px;
+
+  color: #eb4034;
+  font-size: 18px;
+  font-family: "Ubuntu";
+}
+
+.FilterList {
+  display: felx;
+  flex-flow: row nowrap;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.FilterButton {
+  border: none;
+  background-color: white;
+
+  font-size: 18px;
+  font-family: "Ubuntu";
+}
+
+.TaskList {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  list-style: none;
+  padding: 0px;
+}
+
+.TaskItem {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+
+  width: 400px;
+}
