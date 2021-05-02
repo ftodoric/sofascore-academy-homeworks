@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import "./styles.css";
 
-// Props: addingNewTodo, setAddingNewTodo, inputText, setInputText, inputRef, isInputEmpty, handleNewTodo
+// Props: addingNewTodo, setAddingNewTodo, handleNewTodo
 function NewTodoForm(props) {
   const [inputText, setInputText] = useState("");
   const [isInputEmpty, setIsInputEmpty] = useState(true);

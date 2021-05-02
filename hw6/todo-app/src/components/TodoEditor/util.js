@@ -12,7 +12,7 @@ module.exports = {
   removeTodo: function (todoID, todoList) {
     let updatedList = [];
     let k = 0;
-    for (let i = 0; i < updatedList.length; i++) {
+    for (let i = 0; i < todoList.length; i++) {
       if (i === Number(todoID)) continue;
       updatedList.push({
         id: k,
