@@ -14,3 +14,4 @@ Weekly assignments from SofaScore Academy lectures.
 | 23/03/2021 | React.js                     | React App with Custom API      |
 | 06/04/2021 | React.js - Hooks             | Login Screen with Login Action |
 | 13/04/2021 | React.js - Advanced Patterns | To Do App                      |
+| 04/05/2021 | Async Redux.js & Routing     | ...                            |
