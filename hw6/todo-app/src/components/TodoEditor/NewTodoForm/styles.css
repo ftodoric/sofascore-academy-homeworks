@@ -1,0 +1,25 @@
+.NewTodoForm {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-top: 20px;
+}
+
+.NewTodoInput {
+  border: none;
+  border-bottom: 2px solid #eb4034;
+
+  width: 350px;
+
+  font-size: 16px;
+}
+
+.NewTodoButton {
+  border: none;
+  margin-left: 10px;
+
+  background-color: white;
+  font-weight: bold;
+
+  font-size: 16px;
+  color: #eb4034;
+}

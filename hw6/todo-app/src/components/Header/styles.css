@@ -1,0 +1,12 @@
+.Header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+
+  height: 50px;
+
+  font-size: 26pt;
+  color: white;
+  background-color: #eb4034;
+}

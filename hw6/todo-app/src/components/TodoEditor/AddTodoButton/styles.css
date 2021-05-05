@@ -1,0 +1,9 @@
+.AddTodoButton {
+  border: none;
+  margin-top: 20px;
+
+  background-color: white;
+  color: #eb4034;
+  font-size: 19px;
+  font-weight: bold;
+}
