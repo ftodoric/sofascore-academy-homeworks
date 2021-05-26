@@ -1,0 +1,16 @@
+.event-list {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.event-button {
+  background-color: #4caf50; /* Green */
+  color: white;
+  padding: 15px 32px;
+
+  margin: 5px;
+
+  display: flex;
+  flex: row;
+  justify-content: center;
+}
