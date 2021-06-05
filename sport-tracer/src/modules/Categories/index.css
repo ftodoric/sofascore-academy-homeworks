@@ -1,0 +1,32 @@
+.categories {
+  margin-left: 10px;
+}
+
+.categories .list-title {
+  margin-top: 20px;
+  margin-left: 10px;
+
+  font-size: 20px;
+  font-weight: bold;
+  color: #015e53;
+}
+
+.categories .category-link {
+  display: flex;
+  flex-flow: column nowrap;
+
+  padding: 7px;
+  margin: 10px;
+  width: 300px;
+
+  border-bottom: solid 3px #015e53;
+  font-size: 17px;
+  color: black;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 650px) {
+  .categories .category-link {
+    width: 85%;
+  }
+}

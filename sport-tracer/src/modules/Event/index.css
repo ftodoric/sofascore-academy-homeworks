@@ -1,0 +1,110 @@
+.event-container {
+  width: 650px;
+  margin-left: 5px;
+}
+
+.event-container-m {
+  width: 100%;
+}
+
+.event-title {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+
+  padding: 10px;
+
+  font-size: 16px;
+  color: #015e53;
+  font-weight: bold;
+}
+
+.event-title .category {
+  font-size: 14px;
+}
+.event-title .tournament {
+  font-size: 22px;
+}
+
+.event-title .tournament-m {
+  font-size: 18px;
+}
+
+.event-time {
+  padding-left: 10px;
+
+  font-size: 15px;
+}
+
+.event-result {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 40px;
+
+  font-size: 20px;
+}
+
+.event-team-names-m {
+  display: flex;
+  flex-flow: row nowrap;
+
+  margin-left: 10px;
+  margin-bottom: 40px;
+}
+
+.event-result-m {
+  margin-top: 5px;
+}
+
+.team-container {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.team-logo {
+  width: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.team-name {
+  display: flex;
+
+  width: 180px;
+}
+
+.home-team {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.away-team {
+  justify-content: flex-start;
+}
+
+.event-status {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+.score {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+
+  width: 100px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.venue-details {
+  margin: 10px;
+  margin-top: 50px;
+
+  font-size: 13px;
+}

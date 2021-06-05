@@ -1,0 +1,32 @@
+.navbar {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  background-color: #3b3b3b;
+  color: white;
+}
+
+.navbar .item {
+  padding: 10px;
+
+  text-transform: none;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+}
+
+.navbar .home-icon {
+  height: 20px;
+  margin-left: 10px;
+}
+
+@media only screen and (max-width: 650px) {
+  .navbar {
+    justify-content: space-evenly;
+  }
+
+  .navbar .home-icon {
+    margin-left: 0px;
+  }
+}

@@ -1,0 +1,43 @@
+.event-tile {
+  display: flex;
+  flex-flow: row nowrap;
+
+  padding: 5px;
+}
+
+.status-section {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  width: 50px;
+}
+
+.team-section {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+
+  width: 350px;
+  margin-left: 5px;
+}
+
+.score-section {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  margin-left: 5px;
+  width: 40px;
+}
+
+@media only screen and (max-width: 650px) {
+  .team-section {
+    flex-grow: 10;
+  }
+
+  .score-section {
+    margin-right: 10px;
+  }
+}

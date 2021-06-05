@@ -1,0 +1,45 @@
+.home {
+  display: flex;
+  flex-flow: column nowrap;
+
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.home .title {
+  margin: 10px;
+
+  font-size: 20px;
+  font-weight: bold;
+  color: #015e53;
+}
+
+.sport-tile {
+  position: relative;
+  width: 500px;
+}
+
+.sport-tile img {
+  width: 100%;
+}
+
+.sport-tile .name {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+
+  text-decoration: none;
+  color: white;
+  font-size: 40px;
+  text-shadow: 2px 2px 3px #c5c5c5;
+}
+
+@media only screen and (max-width: 650px) {
+  .sport-tile {
+    width: 100%;
+  }
+
+  .sport-tile .name {
+    font-size: 10vw;
+  }
+}

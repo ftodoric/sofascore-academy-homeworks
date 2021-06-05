@@ -1,0 +1,69 @@
+/*
+COLOR CHART:
+  dark-green:   015e53
+  azure:        0a5d5e
+  dark-orange:  a17b2f
+  light-black:  3b3b3b
+*/
+
+.header {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 15px;
+
+  background-color: #3b3b3b;
+  color: white;
+  font-size: 40px;
+  padding: 10px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.header .logo {
+  height: 100px;
+  border: solid 5px;
+}
+
+.header .title-frame {
+  display: flex;
+  flex-flow: column nowrap;
+
+  padding-left: 10px;
+}
+
+.title-frame .title {
+  font-style: italic;
+}
+
+.title-frame .subtitle {
+  font-size: 15px;
+}
+
+@media only screen and (max-width: 650px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 15px;
+
+    background-color: #3b3b3b;
+    color: white;
+    font-size: 40px;
+    padding: 10px;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .header .logo {
+    height: 50px;
+    border: solid 5px;
+  }
+
+  .header .title-frame {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-end;
+
+    padding-right: 10px;
+  }
+}

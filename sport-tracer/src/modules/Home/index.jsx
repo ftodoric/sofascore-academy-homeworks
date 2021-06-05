@@ -1,45 +1,26 @@
-import { Link, Route } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { Category } from "../Category";
+import { Link } from "react-router-dom";
+import "./index.css";
+
+import tileImageFootball from "../../images/tile-image-football.png";
+import tileImageBasketball from "../../images/tile-image-basketball.png";
+import tileImageRugby from "../../images/tile-image-rugby.png";
 
 export function Home() {
-  const [categories, setCategories] = useState([]);
-
-  // Categories Fetch
-  useEffect(() => {
-    // Get today's date
-    var today = new Date().toJSON().slice(0, 10);
-    today = String(today);
-
-    // Fetch
-    const fetchCategories = async () => {
-      const response = await fetch(
-        "https://master.dev.sofascore.com/api/v1/sport/football/" +
-          today +
-          "/7200/categories"
-      );
-      const { categories } = await response.json();
-      setCategories(categories);
-    };
-    fetchCategories();
-  }, []);
-
-  function getCategoryLink(cat) {
-    return "/category/" + JSON.stringify(cat);
-  }
-
   return (
-    <>
-      {categories.map(function (item) {
-        return (
-          <div key={item.category.id}>
-            <Link to={() => getCategoryLink(item.category)}>
-              {item.category.name}
-            </Link>
-            <Route path="/category/:id" component={Category} />
-          </div>
-        );
-      })}
-    </>
+    <div className="home">
+      <div className="title">Sports:</div>
+      <Link className="sport-tile" to="/categories/football/2021-06-04/7200">
+        <img src={tileImageFootball} alt="tileImageFootball" />
+        <div className="name">Football</div>
+      </Link>
+      <Link className="sport-tile" to="/categories/basketball/2021-06-04/7200">
+        <img src={tileImageBasketball} alt="tileImageBasketball" />
+        <div className="name">Basketball</div>
+      </Link>
+      <Link className="sport-tile" to="/categories/rugby/2021-06-04/7200">
+        <img src={tileImageRugby} alt="tileImageRugby" />
+        <div className="name">Rugby</div>
+      </Link>
+    </div>
   );
 }
