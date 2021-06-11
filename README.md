@@ -18,9 +18,9 @@ Weekly assignments from SofaScore Academy lectures.
 
 ## Project
 
-Live Sport Score Web Application  
+Live Sport Score Web Application
 
-### :link: <a href="https://github.com/ftodoric/sport-tracer">SportTracer</a>  
+### :link: <a href="https://github.com/ftodoric/sport-tracer">SportTracer</a>
 
 16.5. - 6.6.  
 Zagreb, 2021.
