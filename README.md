@@ -16,11 +16,9 @@ Weekly assignments from SofaScore Academy lectures.
 | 13/04/2021 | 6   | React.js - Advanced Patterns | To Do App                      |
 | 04/05/2021 | 7   | Routing                      |                                |
 
-## Project
+## Project <a href="https://github.com/ftodoric/sport-tracer">_"SportTracer"_</a>
 
-Live Sport Score Web Application
+Live Sport Score Web Application in **React.js**.
 
-### :link: <a href="https://github.com/ftodoric/sport-tracer">SportTracer</a>
-
-16.5. - 6.6.  
-Zagreb, 2021.
+_16.5. - 6.6._  
+_Zagreb, 2021._
